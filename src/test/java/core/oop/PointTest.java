@@ -22,15 +22,4 @@ class PointTest {
         assertEquals(0, p1.getX());
         assertEquals(20, p1.getY());
     }
-
-    @Test
-    @DisplayName("The second int variable has a different value than the first int variable")
-    void secondVariableHasDifferentValueThanFirst() {
-        int a = 1;
-        int b = a;
-        a = 2;
-
-        assertEquals(2, a);
-        assertEquals(1, b);
-    }
 }

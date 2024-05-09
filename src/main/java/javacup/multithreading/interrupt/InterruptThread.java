@@ -1,16 +1,18 @@
 package javacup.multithreading.interrupt;
 
+import javacup.multithreading.common.ThreadLogger;
+
 public class InterruptThread implements Runnable {
 
     @Override
     public synchronized void run() {
-        Thread currentThread = Thread.currentThread();
         try {
             wait();
-            System.out.printf("%s-%s: After wait\n", currentThread.getId(), currentThread.getName());
+            ThreadLogger.log("After wait");
         } catch (InterruptedException e) {
-            System.out.printf("%s-%s: Interrupted\n", currentThread.getId(), currentThread.getName());
+            ThreadLogger.log("Interrupted");
+
         }
-        System.out.printf("%s-%s: Resume\n", currentThread.getId(), currentThread.getName());
+        ThreadLogger.log("Resume");
     }
 }

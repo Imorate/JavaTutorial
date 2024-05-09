@@ -6,7 +6,9 @@ public class BasicMain {
         Thread numberThread = new Thread(new NumberThread(), "NumberThread");
 
         alphabetThread.start();
+        System.out.printf("%s-%s started\n", alphabetThread.getId(), alphabetThread.getName());
         numberThread.start();
+        System.out.printf("%s-%s started\n", numberThread.getId(), numberThread.getName());
 
         if (args.length != 0) {
             if (args[0].equals("join")) {

@@ -12,10 +12,10 @@ public class AlphabetThread extends Thread {
             try {
                 sleep(200);
             } catch (InterruptedException e) {
-                System.err.println(this.getClass().getSimpleName() + ":\t" + "Interrupted");
+                System.err.printf("%s-%s:\tInterrupted\n", this.getId(), this.getClass().getSimpleName());
                 throw new RuntimeException(e);
             }
-            System.out.println(this.getClass().getSimpleName() + ":\t" + ch);
+            System.out.printf("%s-%s:\t%c\n", this.getId(), this.getClass().getSimpleName(), ch);
         }
     }
 }

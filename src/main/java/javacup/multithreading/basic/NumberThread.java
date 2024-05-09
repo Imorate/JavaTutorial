@@ -1,5 +1,7 @@
 package javacup.multithreading.basic;
 
+import javacup.multithreading.common.ThreadLogger;
+
 public class NumberThread implements Runnable {
     @Override
     public void run() {
@@ -7,10 +9,10 @@ public class NumberThread implements Runnable {
             try {
                 Thread.sleep(400);
             } catch (InterruptedException e) {
-                System.err.printf("%s-%s:\tInterrupted\n", Thread.currentThread().getId(), this.getClass().getSimpleName());
+                ThreadLogger.log("Interrupted");
                 throw new RuntimeException(e);
             }
-            System.out.printf("%s-%s:\t%c\n", Thread.currentThread().getId(), this.getClass().getSimpleName(), ch);
+            ThreadLogger.log("%c", ch);
         }
     }
 }

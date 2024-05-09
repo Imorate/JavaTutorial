@@ -1,14 +1,16 @@
 package javacup.multithreading.basic;
 
+import javacup.multithreading.common.ThreadLogger;
+
 public class BasicMain {
     public static void main(String[] args) {
         AlphabetThread alphabetThread = new AlphabetThread("AlphabetThread");
         Thread numberThread = new Thread(new NumberThread(), "NumberThread");
 
         alphabetThread.start();
-        System.out.printf("%s-%s started\n", alphabetThread.getId(), alphabetThread.getName());
+        ThreadLogger.log(alphabetThread, "Started");
         numberThread.start();
-        System.out.printf("%s-%s started\n", numberThread.getId(), numberThread.getName());
+        ThreadLogger.log(numberThread, "Started");
 
         if (args.length != 0) {
             if (args[0].equals("join")) {

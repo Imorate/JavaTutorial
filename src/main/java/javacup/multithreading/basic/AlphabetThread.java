@@ -1,5 +1,7 @@
 package javacup.multithreading.basic;
 
+import javacup.multithreading.common.ThreadLogger;
+
 public class AlphabetThread extends Thread {
 
     public AlphabetThread(String name) {
@@ -15,7 +17,7 @@ public class AlphabetThread extends Thread {
                 System.err.printf("%s-%s:\tInterrupted\n", this.getId(), this.getClass().getSimpleName());
                 throw new RuntimeException(e);
             }
-            System.out.printf("%s-%s:\t%c\n", this.getId(), this.getClass().getSimpleName(), ch);
+            ThreadLogger.log("%c", ch);
         }
     }
 }

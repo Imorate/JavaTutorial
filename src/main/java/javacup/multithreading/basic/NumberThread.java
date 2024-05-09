@@ -7,10 +7,10 @@ public class NumberThread implements Runnable {
             try {
                 Thread.sleep(400);
             } catch (InterruptedException e) {
-                System.err.println(this.getClass().getSimpleName() + ":\t" + "Interrupted");
+                System.err.printf("%s-%s:\tInterrupted\n", Thread.currentThread().getId(), this.getClass().getSimpleName());
                 throw new RuntimeException(e);
             }
-            System.out.println(this.getClass().getSimpleName() + ":\t" + ch);
+            System.out.printf("%s-%s:\t%c\n", Thread.currentThread().getId(), this.getClass().getSimpleName(), ch);
         }
     }
 }

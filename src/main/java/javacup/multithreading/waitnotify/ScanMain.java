@@ -1,6 +1,6 @@
 package javacup.multithreading.waitnotify;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 public class ScanMain {
     @SuppressWarnings("SynchronizationOnLocalVariableOrMethodParameter")
@@ -8,10 +8,10 @@ public class ScanMain {
         String str = "";
         Thread scanThread = new Thread(new ScanThread(str), "ScanThread");
         scanThread.start();
-        ThreadLogger.log("Started");
+        ThreadUtils.log("Started");
         synchronized (str) {
             str.wait();
         }
-        ThreadLogger.log("Other jobs");
+        ThreadUtils.log("Other jobs");
     }
 }

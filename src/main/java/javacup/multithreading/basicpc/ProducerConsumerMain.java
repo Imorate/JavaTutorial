@@ -1,12 +1,12 @@
 package javacup.multithreading.basicpc;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProducerConsumerMain {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         Thread[] threads = new Thread[4];
 
@@ -19,13 +19,13 @@ public class ProducerConsumerMain {
 
         for (Thread thread : threads) {
             thread.start();
-            ThreadLogger.log("%s-%s started", thread.getId(),thread.getName());
+            ThreadUtils.log("%s-%s started", thread.getId(), thread.getName());
         }
 
         for (Thread thread : threads) {
-            thread.join();
+            ThreadUtils.join(thread);
         }
 
-        ThreadLogger.log("Finished all threads with size of list: %d", list.size());
+        ThreadUtils.log("Finished all threads with size of list: %d", list.size());
     }
 }

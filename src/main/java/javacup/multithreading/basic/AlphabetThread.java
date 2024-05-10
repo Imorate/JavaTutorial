@@ -1,6 +1,6 @@
 package javacup.multithreading.basic;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 public class AlphabetThread extends Thread {
 
@@ -11,13 +11,8 @@ public class AlphabetThread extends Thread {
     @Override
     public void run() {
         for (char ch = 'A'; ch <= 'Z'; ch++) {
-            try {
-                sleep(200);
-            } catch (InterruptedException e) {
-                System.err.printf("%s-%s:\tInterrupted\n", this.getId(), this.getClass().getSimpleName());
-                throw new RuntimeException(e);
-            }
-            ThreadLogger.log("%c", ch);
+            ThreadUtils.sleep(200);
+            ThreadUtils.log("%c", ch);
         }
     }
 }

@@ -1,6 +1,6 @@
 package javacup.multithreading.basicpc;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 import java.util.List;
 
@@ -17,14 +17,10 @@ public class Producer implements Runnable {
             synchronized (list) {
                 int num = (int) (Math.random() * 50);
                 list.add(num);
-                ThreadLogger.log("Produced %d", num);
+                ThreadUtils.log("Produced %d", num);
                 list.notify();
             }
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                ThreadLogger.log("Thread interrupted");
-            }
+            ThreadUtils.sleep(100);
         }
     }
 }

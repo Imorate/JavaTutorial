@@ -1,6 +1,6 @@
 package javacup.multithreading.waitnotify;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 public class ScanThread implements Runnable {
     private final String str;
@@ -11,15 +11,11 @@ public class ScanThread implements Runnable {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            ThreadLogger.log(e.getMessage());
-        }
-        ThreadLogger.log("Scan");
+        ThreadUtils.sleep(1000);
+        ThreadUtils.log("Scan");
         synchronized (str) {
             str.notify();
         }
-        ThreadLogger.log("Other jobs");
+        ThreadUtils.log("Other jobs");
     }
 }

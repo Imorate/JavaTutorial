@@ -1,6 +1,6 @@
 package javacup.multithreading.basicpc;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 import java.util.List;
 
@@ -19,11 +19,11 @@ public class Consumer implements Runnable {
                     try {
                         list.wait();
                     } catch (InterruptedException e) {
-                        ThreadLogger.log("Thread interrupted");
+                        ThreadUtils.log("Thread interrupted");
                     }
                 }
                 int x = list.remove(0);
-                ThreadLogger.log("Consumed " + x);
+                ThreadUtils.log("Consumed " + x);
             }
         }
     }

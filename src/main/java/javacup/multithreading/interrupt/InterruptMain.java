@@ -1,13 +1,13 @@
 package javacup.multithreading.interrupt;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 public class InterruptMain {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Thread interruptThread = new Thread(new InterruptThread(), "InterruptThread");
         interruptThread.start();
-        ThreadLogger.log(interruptThread, "Started");
-        Thread.sleep(1000);
+        ThreadUtils.log(interruptThread, "Started");
+        ThreadUtils.sleep(1000);
         interruptThread.interrupt();
     }
 }

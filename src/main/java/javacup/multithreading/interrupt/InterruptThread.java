@@ -1,6 +1,6 @@
 package javacup.multithreading.interrupt;
 
-import javacup.common.ThreadLogger;
+import javacup.common.ThreadUtils;
 
 public class InterruptThread implements Runnable {
 
@@ -8,11 +8,11 @@ public class InterruptThread implements Runnable {
     public synchronized void run() {
         try {
             wait();
-            ThreadLogger.log("After wait");
+            ThreadUtils.log("After wait");
         } catch (InterruptedException e) {
-            ThreadLogger.log("Interrupted");
+            ThreadUtils.log("Interrupted");
 
         }
-        ThreadLogger.log("Resume");
+        ThreadUtils.log("Resume");
     }
 }

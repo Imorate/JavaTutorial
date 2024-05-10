@@ -1,6 +1,6 @@
 package javacup.multithreading.interrupt;
 
-import javacup.multithreading.common.ThreadLogger;
+import javacup.common.ThreadLogger;
 
 public class InterruptThread implements Runnable {
 

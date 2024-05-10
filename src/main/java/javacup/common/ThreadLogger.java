@@ -1,4 +1,4 @@
-package javacup.multithreading.common;
+package javacup.common;
 
 public class ThreadLogger {
     public static void log(String template, Object... objects) {

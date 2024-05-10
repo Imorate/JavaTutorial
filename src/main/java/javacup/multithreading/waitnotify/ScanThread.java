@@ -1,6 +1,6 @@
 package javacup.multithreading.waitnotify;
 
-import javacup.multithreading.common.ThreadLogger;
+import javacup.common.ThreadLogger;
 
 public class ScanThread implements Runnable {
     private final String str;

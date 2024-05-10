@@ -1,6 +1,6 @@
 package javacup.multithreading.basic;
 
-import javacup.multithreading.common.ThreadLogger;
+import javacup.common.ThreadLogger;
 
 public class BasicMain {
     public static void main(String[] args) {

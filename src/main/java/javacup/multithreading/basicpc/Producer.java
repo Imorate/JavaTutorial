@@ -1,6 +1,6 @@
 package javacup.multithreading.basicpc;
 
-import javacup.multithreading.common.ThreadLogger;
+import javacup.common.ThreadLogger;
 
 import java.util.List;
 

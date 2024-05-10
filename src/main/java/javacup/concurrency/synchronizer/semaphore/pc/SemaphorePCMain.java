@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
-public class SemaphoreMain {
+public class SemaphorePCMain {
     public static void main(String[] args) {
         int threadCount = 4;
         Thread[] threads = new Thread[threadCount];

@@ -14,7 +14,7 @@ public class ThreadUtils {
     }
 
     public static void log(Thread thread, String template, Object... objects) {
-        String threadDetails = String.format("%s-%s: ", thread.getId(), thread.getName());
+        String threadDetails = String.format("[%s] %s: ", thread.getId(), thread.getName());
         if (objects == null) {
             System.out.printf(threadDetails + template + "\n");
         } else {

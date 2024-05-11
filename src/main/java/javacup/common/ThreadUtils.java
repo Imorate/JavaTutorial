@@ -1,5 +1,6 @@
 package javacup.common;
 
+@SuppressWarnings("unused")
 public class ThreadUtils {
     public static void log(String template, Object... objects) {
         log(Thread.currentThread(), template, objects);
